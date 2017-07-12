@@ -1,36 +1,24 @@
-[//]: # (Image References)
+# Artificial Intelligence Engineer Nanodegree Term II
+## Computer Vision Capstone Project
+### Project: Facial Keypoint Detection and Real-time Filtering
+## Overview
 
-[image1]: ./images/obamas_with_keypoints.png "Facial Keypoint Detection"
-
-# AIND Term II, Computer Vision Capstone Project 
-# Facial Keypoint Detection and Real-time Filtering
-
-## Project Overview
-
-Welcome to the Computer Vision capstone project in the AI Nanodegree program! In this project, you’ll combine your knowledge of computer vision techniques and deep learning to build and end-to-end facial keypoint recognition system. Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.
+In this project, I combined my knowledge of computer vision techniques and deep
+learning to build and end-to-end facial keypoint recognition system. Facial 
+keypoints include points around the eyes, nose, and mouth on any face and are 
+used in many applications, from facial tracking to emotion recognition. My code is 
+able to take in any image containing faces and identify the location of each 
+face and their facial keypoints, as shown below,
 
 ![Facial Keypoint Detection][image1]
 
-The project will be broken up into a few main parts in one Python notebook:
-
-__Part 1__ : Investigating OpenCV, pre-processing, and face detection
-
-__Part 2__ : Training a Convolutional Neural Network (CNN) to detect facial keypoints
-
-__Part 3__ : Putting parts 1 and 2 together to identify facial keypoints on any image!
-
-You'll also be given *optional* exercises that allow you to extend this project so that it works on video and allows you to implement fun face filters in real-time!
-
-
-## Project Instructions
-
-All of the starting code and resources you'll need to compete this project are in a Github repo! Before you can get stared coding, you'll have to make sure that you have all the libraries and dependencies required to support this project.
+## Getting Started
 
 ### Environment
 
 1. Clone the repository, and navigate to the downloaded folder.
 ```
-git clone https://github.com/udacity/AIND-CV-FacialKeypoints.git
+git clone https://github.com/JonathanKSullivan/Facial-Keypoint-Detection.git
 cd AIND-CV-FacialKeypoints
 ```
 
@@ -100,7 +88,20 @@ You should be left with two `.csv` files of the same name. You may delete the zi
 
 Now, with that data unzipped, you should have everything you need!
 
-## Notebook
+
+### Project files
+Main project files:
+- **mimic.js**: Javascript file with code that connects to the Affectiva API and processes results.
+- **index.html**: Dynamic webpage that displays the video feed and results.
+- **mimic.css**: Stylesheet file that defines the layout and presentation for HTML elements.
+
+There are two additional files provided for serving the project as a local web application: 
+
+- **serve.py**: A lightweight Python webserver required to serve the webpage over HTTPS, so that we can access the webcam feed.
+- **generate-pemfile.sh**: A shell script you’ll need to run once to generate an SSL certificate for the webserver.
+
+## Deployment
+
 
 1. Navigate back to the repo. (Also your source environment should still be activated at this point)
 ```shell
@@ -113,81 +114,14 @@ cd AIND-CV-FacialKeypoints
 jupyter notebook CV_project.ipynb
 ```
 
-__NOTE:__ While some code has already been implemented to get you started, you will need to implement additional functionality to successfully answer all of the questions included in the notebook. __Unless requested, do not modify code that has already been included.__
+## Built With
+## Authors
+* **Udacity** - *Initial work* - [AIND-CV-FacialKeypoints](https://github.com/udacity/AIND-CV-FacialKeypoints)
+* **Jonathan Sulivan**
+
+## Acknowledgments
+* Hackbright Academy
+* Udacity
 
 
-## Evaluation
-
-Your project will be reviewed by a Udacity reviewer against the Computer Vision project [rubric](#rubric).  Review this rubric thoroughly, and self-evaluate your project before submission.  All criteria found in the rubric must meet specifications for you to pass.
-
-
-## Project Submission
-
-When you are ready to submit your project, collect the following files and compress them into a single zip archive for upload:
-
- - The `CV_project.ipynb` file with fully functional code. All code cells should be executed and displaying output, and all questions should be answered.
- - An HTML *or* PDF export of the project notebook with the name `report.html` or `report.pdf`.
- - Any additional images used for the project that were not supplied to you for the project. 
- - **Please do not include the project data sets in the data/ folder**. They are too big and only your executed notebook code and text will be evaluated.
-
-Alternatively, your submission could consist of only the **GitHub link** to your repository.
-
-<a id='rubric'></a>
-## Project Rubric
-
-#### Files Submitted
-
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-| Submission Files      |  `CV_project.ipynb`--> all completed python functions requested in the main notebook `CV_project.ipynb` **TODO** items should be completed.		|
-
-
-#### Step 1:  Add eye detections to the face detection setup
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-|  Add eye detections to the current face detection setup. |  The submission returns proper code detecting and marking eyes in the given test image. |
-
-
-#### Step 2: De-noise an image for better face detection
-
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-| De-noise an image for better face detection.  |  The submission completes de-noising of the given noisy test image with perfect face detections then performed on the cleaned image. |
-
-
-#### Step 3: Blur and edge detect an image
-
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-| Blur and edge detect a test image.  | The submission returns an edge-detected image that has first been blurred, then edge-detected, using the specified parameters. |
-
-
-#### Step 4: Automatically hide the identity of a person (blur a face)
-
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-| Find and blur the face of an individual in a test image. |  The submission should provide code to automatically detect the face of a person in a test image, then blur their face to mask their identity.  |
-
-
-#### Step 5:  Specify the network architecture
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-|  Specify a convolutional network architecture for learning correspondence between input faces and facial keypoints. | The submission successfully provides code to build an appropriate convolutional network. |
-
-
-#### Step 6:  Compile and train the model
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-|  Compile and train your convnet.| The submission successfully compiles and trains their convnet.  |
-
-
-#### Step 7:  Answer a few questions and visualize the loss
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-|  Answer a few questions about your training and visualize the loss function.| The submission successfully discusses any potential issues with their training, and answers all of the provided questions.  |
-
-
-#### Step 8:  Complete a facial keypoints detector and complete the CV pipeline
-| Criteria       		|     Meets Specifications	        			            | 
-|:---------------------:|:---------------------------------------------------------:| 
-| Combine OpenCV face detection with your trained convnet facial keypoint detector. | The submission successfully combines OpenCV's face detection with their trained convnet keypoint detector. |
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. Please refer to [Udacity Terms of Service](https://www.udacity.com/legal) for further information.
