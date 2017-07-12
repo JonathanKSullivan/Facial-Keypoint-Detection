@@ -10,7 +10,7 @@ used in many applications, from facial tracking to emotion recognition. My code 
 able to take in any image containing faces and identify the location of each 
 face and their facial keypoints, as shown below,
 
-![Facial Keypoint Detection][image1]
+![Facial Keypoint Detection](./images/obamas_with_keypoints.png)
 
 ## Getting Started
 
